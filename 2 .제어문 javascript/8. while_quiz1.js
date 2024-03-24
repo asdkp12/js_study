@@ -9,7 +9,7 @@ if (n<=m) {
   alert (a);
 } else {
   while (n>=m){
-    a= a+m;
+    a= a + m;
     m++;
   }
   alert (a);
