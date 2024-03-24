@@ -43,7 +43,7 @@ var 쪨리 = '곰표젤리'; //(x)
 var myMoney = 1000;
 const $orange = 'ffa808';
 
-// $orange = 'asdasd' (const는 재할당 불가능.)
+//$orange = 'asdasd' (const는 재할당 불가능.)
 
 console.log($orange);
 

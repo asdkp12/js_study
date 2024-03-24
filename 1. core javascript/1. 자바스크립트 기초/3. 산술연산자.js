@@ -34,7 +34,9 @@ var xx = 5;
 // xx++
 xx = xx + 1;
 console.log(xx);
-
+var yy = 5;
+yy = ++yy
+console.log(yy);
 // xx--;
 // xx = xx - 1;
 
