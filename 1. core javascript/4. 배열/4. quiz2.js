@@ -14,7 +14,8 @@
 var total = 0;
 var input = 0;
 var arr = [];
-let count = 0;
+var count = 0;
+
 while (true) {
   input = prompt('더하려는 값을 입력하세요. 그만 을 치면 값이 출력됩니다');
   count++;
@@ -26,7 +27,6 @@ while (true) {
     if (count === 6) break;
   }
 }
-
 alert(`${arr}총합:${total}`);
 // 1.pormpt 창을 뜨워서 받은 값들을 배열로 저장
 // 변수를 만들어서 저장해야됨
