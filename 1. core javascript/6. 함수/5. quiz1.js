@@ -1,3 +1,17 @@
+function calcDivisor(n) {
+
+  var divisor = [];
+  for (var i = 1; i <= n; i++) {
+    if (n % i === 0) {
+      divisor.push(i);
+    }
+  } //end for
+  console.log(divisor);
+
+  return divisor.length;
+}
+
+
 /* 
 Q. n의 약수의 개수를 구하기
 1. 정수 n을 전달받아 n의 약수들을 출력하고 
@@ -8,4 +22,5 @@ Q. n의 약수의 개수를 구하기
 */
 
 // 호출부
-
+var divCount = calcDivisor(20);
+console.log(`약수의 개수: ${divCount}개`);

@@ -41,7 +41,7 @@ console.log(`r2:${r2}`);
 function callName(nickName) {
   let prohibits = ['바보', '멍청이', '메롱']
   if (prohibits.includes(nickName)) {
-    console.log('나쁜말! (검지검지~!)');
+    console.log('나쁜말! (검지검지!)');
     return;
   }
   console.log(`${nickName}님 안녕하세요!`);
