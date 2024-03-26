@@ -18,56 +18,60 @@ Q. 회원의 아이디정보와 비밀번호 정보가 들어있는 객체 user�
 */
 
 var userInfo = {
-  userList: [{
-    account: 'kim1234',
-    password: 'kkk1234',
-    username: '김두한'
-  },
-  {
-    account: 'park9876',
-    password: 'ppp9999',
-    username: '박찬호'
-  },
-  {
-    account: 'hong7766',
-    password: 'hhh1234',
-    username: '홍길동'
-  },
-  {
-    account: 'asdkp12',
-    password: '1234',
-    username: '엄준식'
-  }
-  ]
+  userList: [
+    {
+      account: "kim1234",
+      password: "kkk1234",
+      username: "김두한",
+    },
+    {
+      account: "park9876",
+      password: "ppp9999",
+      username: "박찬호",
+    },
+    {
+      account: "hong7766",
+      password: "hhh1234",
+      username: "홍길동",
+    },
+    {
+      account: "asdkp12",
+      password: "1234",
+      username: "엄준식",
+    },
+  ],
 };
 
-let idInput = '';
-let pwInput = '';
-// alert (`존재하지 않는 회원입니다.`)
-// alert(`${un}님 환영합니다`)
+// 위 객체에서 배열만 추출
+let userList = userInfo.userList;
 
-idInput = prompt(`아이디를 입력해 주세요`);
 while (true) {
+  // 계정을 입력받고 해당 계정이 존재하는 계정인지를 확인
+  let inputAccount = prompt("아이디를 입력하세요"); // 사용자 입력한 계정명 가정.
 
-  for (let a of userInfo.userList) {
+  // 회원목록 배열을 반복 순회하여 입력한 계정명과 일치하는 계정이 있는지 체크
+  let foundUser = null;
 
-    if (idInput === a.account) {
-      pwInput = prompt(`비밀번호를 입력해 주세요`);
-      while (true) {
-        for (let b of userInfo.userList) {
-          if (pwInput === b.password) {
-            for (let c of userInfo.userList) {
-              let un = c.username
-              alert(`${un}님 환영합니다`)
-            }
-          }
-        }
-      }
+  for (let user of userList) {
+    if (inputAccount === user.account) {
+      foundUser = user;
+      break;
     }
   }
-  alert(`존재하지 않는 회원입니다.`)
 
+  // console.log('계정이 존재함');
+  if (foundUser !== null) {
+    // console.log("일단 너 회원가입했네?");
+    //비번검증
+    //사용자에게 비번 입력받기
+    let inputPassword = prompt("비번을 입력하세요");
+    if (inputPassword === foundUser.password) {
+      alert(`${foundUser.username}님 로그인 성공!!`);
+      break;
+    } else {
+      alert("비번 땡!");
+    }
+  } else {
+    alert("가입부터 하지?");
+  }
 }
-//un을 찾는 for of문
-
-
