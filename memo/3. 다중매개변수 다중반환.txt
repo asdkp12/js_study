@@ -1,0 +1,10 @@
+(...numbers, ...numbers2)
+이렇게는 못하고
+대괄호 두번 쓰면됨
+spread는 한번만 쓸 수 있는거지
+다만,
+(a, b, ...numbers) 는 가능
+(a, b, ...numbers, c) 는 불가능
+
+
+return () 대신 [] 는 배열 {}는 객체
