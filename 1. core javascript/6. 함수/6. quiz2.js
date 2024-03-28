@@ -15,7 +15,7 @@ Math.round(5.7899); //반올림 -> 6
 
 function calcBMI(height, weight) {
   let bmi = weight / ((height / 100) * (height / 100)); // 키를 미터 단위로 변환하여 계산
-  let status;
+  let status = '';
 
   if (bmi >= 25.0) {
       status = "당신은 과체중입니다.";

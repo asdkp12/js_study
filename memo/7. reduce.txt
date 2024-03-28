@@ -1,0 +1,24 @@
+appleBasket
+  .reduce((a,b) => {
+    console.log(a);
+    console.log(b);
+    console.log('==========');
+  });
+
+
+
+{ color: 'green', sweet: 13 }
+{ color: 'red', sweet: 14 }
+==========
+undefined
+{ color: 'red', sweet: 11 }
+==========
+undefined
+{ color: 'green', sweet: 6 }
+==========
+undefined
+{ color: 'green', sweet: 7 }
+==========
+undefined
+{ color: 'green', sweet: 9 }
+==========
