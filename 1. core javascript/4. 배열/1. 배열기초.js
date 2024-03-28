@@ -56,7 +56,9 @@ for (var day of weekDays) {
   console.log(`${day}요일!!`);
 }
 
-for (var n of [1,3,5,7]) {}
+for (var n of [1,3,5,7]) {
+  console.log(`${n}`);
+}
 
 // of 뒤에 배열 [] 이 와야한다.
 // of 앞에는 변수를 하나 만들어준다.
