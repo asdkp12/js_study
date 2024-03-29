@@ -238,8 +238,44 @@ console.log(totalSalesByCity);
 
 // 5. **거래액이 700000원 이상인 거래를 모두 찾아, 해당 거래의 연도별로 분류해주세요. 결과는 `{2022: [...거래정보], 2023: [...거래정보]}`와 같은 형태가 되어야 합니다.**
 
-// 6. **각 거래자별로 그들이 진행한 거래의 평균 거래액을 계산해주세요. 결과는 `{거래자이름: 평균거래액}` 형태의 객체가 되어야 합니다.**
+// 최종 결과 객체
+const trsOver700kByYear = {};
 
+for (const trs of traders) {
+  if (trs.value >= 700000) {
+    // 거래액 필터 조건
+    const yearString = trs.year.toString();
+    if (!trsOver700kByYear[yearString]) {
+      trsOver700kByYear[yearString] = [trs];
+    } else {
+      // 지금 거래년도가 저장되어 있다면
+      trsOver700kByYear[yearString].push(trs);
+    }
+  }
+}
+console.log(JSON.stringify(trsOver700kByYear, null, 2));
+/*
+const trsOver700kByYear = traders 
+  .filter(trs => trs.value >= 700000)
+  .reduce((transactions, trs) => {
+    const yearString = trs.year.toString();
+    if (!transactions[yearString]) transactions[yearString] = [trs];
+    else transactions[yearString].push(trs);
+    return transactions;
+  }, {});
+
+console.log(JSON.stringify(trsOver700kByYear, null, 2));
+*/
+
+// WTF console.log(JSON.stringify ( , , )) ?????
+
+// 오브젝트안에 오브젝트 안에 오브젝트 ... ...오브젝트 이렇게 될 경우 자바스크립트는 OBJECT로 출력해준다
+// 명확하게 보고싶을경우 위와 같은 속성을 쓴다
+
+// 6. **각 거래자별로 그들이 진행한 거래의 평균 거래액을 계산해주세요. 결과는 `{거래자이름: 평균거래액}` 형태의 객체가 되어야 합니다.**
+trader.reduce(() => {}, {});
+
+// sort
 // 7. **2022년과 2023년 각각에서 가장 많은 거래를 한 거래자의 이름과 그 거래 횟수를 출력해주세요.**
 
 // 8. **모든 거래 중 거래액이 중간값인 거래의 정보(거래자 이름, 도시, 연도, 거래액)를 출력해주세요.**
