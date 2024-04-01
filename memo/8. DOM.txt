@@ -1,0 +1,49 @@
+뭐를 하면 뭐 색이 바뀐다 이럴때 js를 씀
+일반적으론 css써라
+
+떠~나가요~ 아주 먼 곳으로~
+
+04.01 마누절~
+
+childNodes
+-li태그 앞 공백도 text로 판단해버림
+
+children
+-너가 아는 상식대로 자식태그를 보여준다
+그래서 얘 쓰는게 편함
+
+firstChild
+얘도 걍 쓰지말고
+
+ul.firstElementChild
+이거 쓰셈
+
+html 꿀팁 ctrl shift p 라고 래핑하면 감싸기 좋음
+
+타입에러 찾는거 잘하면 될듯?
+
+innerContent (성능이슈도 있음)
+써야될거같지만
+textContent
+를 써야 세로드립이 가능함
+
+5. 태그 중간 삽입하기
+디스트럭션 뭐지
+
+insertBefore(a,b)
+a = newNode
+b = 위치
+
+그래서 디스트럭션이 먼데 10덕아
+// ...로 풀고 []로 다시 배열로 만들고 구조분해 할당하는거임
+ex)
+const $fruits = document.getElementById("fruits");
+      const [$apple, $banana, $grape] = [...$fruits.children];
+요론식
+
+get set
+
+개인적으로 함수 하나하나 외워두는것보다 그냥 무지성 function + if 문으로 다 만들 수 있는데
+굳이 내가 함수를 왜 기억해야함?
+ㄹㅇㅋㅋ
+

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <ul id="fruits">
+      <li>사과</li>
+      <li>바나나</li>
+      <li>포도</li>
+    </ul>
+
+    <script>
+      const $fruits = document.getElementById("fruits");
+      const [$apple, $banana, $grape] = [...$fruits.children];
+      // 이게 머하는건지 모르겠네
+      // ...로 풀고 []로 다시 배열로 만들고 구조분해 할당하는거임
+
+      // 새 노드 생성
+      const $newDiv = document.createElement("div");
+      $newDiv.textContent = "빡스";
+
+      // 노드 교체 : replaceChild(new, old)
+      $fruits.replaceChild($newDiv, $banana);
+
+      // 노드 삭제
+      $fruits.removeChild($apple);
+
+      // 자식노드 전체삭제
+      // $fruits.innerHTML = "";
+
+      // 아래는 걍 함수 새로 만들어버리기
+      // [...$fruits.children].forEach(($f) => {
+      //   $fruits.removeChild($f);
+      // });
+
+      // forEach 대신 for문
+      const children = [...$fruits.children];
+      for (let i = 0; i < children.length; i++) {
+        $fruits.removeChild(children[i]);
+      }
+    </script>
+  </body>
+</html>

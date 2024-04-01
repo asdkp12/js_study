@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    .menu ul {
+      margin: 0;
+      list-style: none;
+      padding-left: 20px;
+      display: none;
+    }
+    .menu .title {
+      font-size: 18px;
+      cursor: pointer;
+    }
+    .menu .title::before {
+      content: "▶ ";
+      font-size: 80%;
+      color: green;
+    }
+    .menu.open .title::before {
+      content: "▼ ";
+    }
+    .menu.open ul {
+      display: block;
+    }
+  </style>
+  <body>
+    <!-- #lunches.menu>span.title+ul>li*4 -->
+    <div id="lunches" class="menu">
+      <span class="title">추천 메뉴(Click Me!)</span>
+      <ul>
+        <li>돈까스</li>
+        <li>군만두</li>
+        <li>볶음밥</li>
+        <li>마파두부</li>
+      </ul>
+    </div>
+
+    <script>
+      const $ul = document.querySelector("#lunches ul");
+      const $click = document.getElementById("lunches");
+      const $title = document.querySelector("#lunches .title");
+
+      let tf = true;
+      $click.onclick = () => {
+        if (tf) {
+          $ul.style.display = "block";
+          $click.classList.add("open");
+        } else {
+          $ul.style.display = "none";
+          $click.classList.remove("open");
+        }
+        tf = !tf;
+      };
+    </script>
+  </body>
+</html>
