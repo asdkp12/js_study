@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="timeout">3초 후 메시지 보기</button>
+    <p class="msg"></p>
+
+    <script>
+      const $timeoutBtn = document.getElementById("timeout");
+      $timeoutBtn.onclick = (e) => {
+        setTimeout(() => {
+          document.querySelector(".msg").textContent = "안뇽~ 3초가 지났어!";
+        }, 3000);
+      };
+      // 근데 이 코드 문제가 뭐냐? 3초 후 메시지 보기를 와다다다다다 눌렀을떄? 3초짜리 대기열을 계속 쌓게하는거임
+      //   그래서 clearTimeout이랑 같이써야함
+    </script>
+  </body>
+</html>

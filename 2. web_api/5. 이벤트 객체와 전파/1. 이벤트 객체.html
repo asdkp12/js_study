@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body>
+    <!-- p+em.msg -->
+    <p>shfit를 누른채로 아무 곳이나 클릭하세요</p>
+    <em class="msg"></em>
+    <hr />
+
+    <input type="text" id="txt" placeholder="아무값을 입력하고 Enter" />
+    <p class="show"></p>
+
+    <script>
+      document.addEventListener("click", function (e) {
+        console.log(e);
+        const $em = document.querySelector(".msg");
+        if (e.shiftKey) {
+          $em.textContent = `x: ${e.x} y: ${e.y}`;
+        } else {
+          textContent = "";
+        }
+      });
+      //   오 신기한데 어려움 ㅋㅋ
+      /* 위를 최적화한 코드
+      document.addEventListener('click', ({x, y, shiftKey}) => {
+
+        const $em = document.querySelector('.msg');
+
+        if (shiftKey) {
+          $em.textContent = `x: ${x}, y: ${y}`;
+        } else {
+          $em.textContent = '';
+        }
+      });
+
+      */
+      const $txt = document.getElementById("txt");
+      $txt.addEventListener("keyup", (e) => {
+        console.log(e);
+        console.log($txt.value);
+
+        const $show = document.querySelector(".show");
+        if (e.key === "Enter") {
+          $show.textContent = $txt.value;
+          $txt.value = "";
+        }
+      });
+    </script>
+  </body>
+</html>

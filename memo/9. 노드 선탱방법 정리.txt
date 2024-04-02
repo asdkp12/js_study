@@ -1,0 +1,86 @@
+
+코딩악마 1강.
+=================================================================
+
+document.documentElement
+HTML 접근
+document.body
+body 접근
+document.head
+head 접근
+
+.getElementById('id')
+아이디 선택
+
+.getElementsByTagName('Tag or Class')
+모든 태그명에 접근
+**for of 로 접근할 수 있음**
+
+--------css 방식으로 노드 선택하기--------
+
+.QuerySelectorAll('.class')
+모든 노드 가져옴
+
+.QuerySelector('#id')
+가장 첫 노드 가져옴
+
+:nth-child 같은 것도 쓸 수 있음.
+**for of 로 접근할 수 있음**
+
+위는 유사배열이기 때문에
+.legth
+for of
+은 사용 가능하지만
+
+.push
+.pop
+.filter
+.join
+은 사용 불가능하다
+
+-----------------------------------------
+
+코딩악마 2강.
+========================================================
+
+.QuerySelectorAll('.class')
+.getElementsByTagName('Tag or Class')
+ 위 두 코드는 동일한 동작을 하는것 처럼 보이지만
+ 반환값은 NodeList와 HTMLCollection으로 다르다.
+
+.QuerySelectorAll('.class')             은 NodeList 를 반환
+.getElementsByTagName('Tag or Class')   은 HTMLCollection 를 반환
+
+HTMLCollection  = 노드에 변경사항이 실시간으로 반영됨
+NodeList        = 한번 저장된 값을 계속 사용.
+-------------------------------------------------------------
+.parentNode     = 부모인 노드중 모든노드를 반환
+.parentElement  = 부모인 노드중 요소노드를 반환
+요소노드란?    = HTML 태그로 이루어진 요소.
+노드(node)의 하위개념이 요소(element)이다
+-------------------------------------------------------------
+주요타입.
+.elementNode    = p 태그나 div 태그같은 HTML 요소를 반환
+.AtributeNode   = img 태그에 src같은 속성을 반환
+.textNode       = 텍스트 반환
+
+.childNods      = 모든 타입의 노드들 전부 반환 
+(얘는 공백도 반환해서 쓰지마.)
+(예외적으로 실시간반영을 함.)
+.children       = 요소 타입의 노드만 반환
+**보통 HTMLCollection 을 반환해주는게 좋겠네? 노드요소까지 접근해서ㅇㅇ**
+예를 들어
+.firstChild 보단
+.firstElementChild 이 메서드를 쓰는 상황이 훨신 많겠지
+보통 Element 가 들어가는 식이네 ㅇㅇ
+아~~~~~~~~~~니시발 모르겠네
+
+형제는
+previousSibling 보단
+previousElementSibling
+nextSibling 보단
+nextElementSibling
+
+코딩악마 3강.
+========================================================
+
