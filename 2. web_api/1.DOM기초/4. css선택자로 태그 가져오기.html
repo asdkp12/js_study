@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul id="fruits">
+      <li class="f-item ap">사과</li>
+      <li class="f-item bn">바나나</li>
+      <li id="grape" class="f-item gp">포도</li>
+      <li class="f-item pc">복숭아</li>
+    </ul>
+    <script>
+      //   const $grape = document.querySelector(".gp");
+      //   const $grape = document.querySelector("#fruits li:nth-child(3)");
+      const $grape = document.querySelector("#grape");
+      console.log($grape);
+
+      $grape.textContent = "포도포도 초록 포도";
+      //   querySelector는 1개의 선택자만 가져옴 같은 class 여도 맨 첫번째 만 가져옴
+
+      //   다 가져오는 건 아래 코드임
+      const $fItemlist = [...document.querySelectorAll(".f-item")];
+      console.log($fItemlist);
+      console.log([1, 2, 3]);
+      //   배열로 바꾸는게 [...]; 임
+      //   for (const $f of $fItemlist) {
+      //     $f.style.color = "red";
+      //   }
+
+      $fItemlist.forEach(($f) => ($f.style.color = "blue"));
+      // 사실 이새긴 유사배열이라 POP이 안됨 ㅋㅋ 배열 호소인 ㅋㅋ
+      //   $fItemlist.pop();
+
+      //   유사 배열: 객체 형태를 유지한 배열.
+      const foods = {
+        0: "짜장면",
+        1: "짬뽕",
+        2: "볶음밥",
+        length: 3,
+      };
+      console.log(foods[0]);
+      //   tlqkf 이게 뭔경우야 누가봐도 배열인데 객체가 선택이 왜됨 ㅋㅋㅋㅋ
+      //   아무튼 그래서 배열 전용 함수는 못씀 pop처럼
+    </script>
+  </body>
+</html>

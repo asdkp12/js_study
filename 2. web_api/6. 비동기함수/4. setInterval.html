@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p class="msg"></p>
+
+    <p id="clock"></p>
+    <script>
+      const $msg = document.querySelector(".msg");
+      // setInterval 은 비동기임! 밑에 코드는 따로 돌아
+      setInterval(() => {
+        $msg.textContent += "공부 안쳐하냐~~\n";
+      }, 20);
+
+      for (let i = 0; i < 5; i++) {
+        console.log(i);
+      }
+      const $clock = document.getElementById("clock");
+      // 현재시간 가져오기
+      //   console.log(now.toLocaleString());
+
+      setInterval(() => {
+        const now = new Date();
+        $clock.textContent = now.toLocaleTimeString();
+      }, 1);
+    </script>
+  </body>
+</html>

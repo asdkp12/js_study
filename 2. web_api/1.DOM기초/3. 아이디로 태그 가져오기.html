@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul id="fruits">
+      <li id="apple" class="f-item">사과</li>
+      <li id="banana" class="f-item">바나나</li>
+      <li id="grape" class="f-item">포도</li>
+      <li id="peach" class="f-item">복숭아</li>
+    </ul>
+
+    <script>
+      const $banana = document.getElementById("banana");
+      // $는 관례이다. 아 이건 태그가 저장 됐겠구나.
+      console.log($banana.textContent);
+      $banana.textContent = "붜네너";
+      $banana.pet = "바나나알러지원숭이";
+
+      const $peach = document.getElementById("peach");
+      $peach.style["font-style"] = "italic";
+      $peach.style["color"] = "orange";
+
+      // id가 grape 인 요소노드 객체를 취득하여
+      // 배경색상 조작을 통해 violet색으로 조작
+
+      const $grape = document.getElementById("grape");
+      // $grape.style["background-color"] = "violet";
+      // 위도 되지만
+      $grape.style.backgroundColor = "violet";
+      // 이것도 됨
+      // 왜지?
+      $grape.style.width = "fit = content";
+      $grape.style.color = "yellow";
+      // 왜 why 객체 잡을때 문자열로 잡고싶으면 [" "] 로 잡아야하잖아
+      // 둘다 객체 잡는 방법임 [" "] 로 잡던가 .으로 잡던가
+    </script>
+  </body>
+</html>

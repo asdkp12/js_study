@@ -85,7 +85,11 @@ const mappedApples = filteredApples.map((apple) => {
 mappedApples.forEach((apple) => console.log(apple));
 
 // 아래는 단축한 코드
+<<<<<<< HEAD
 appleBasket 
+=======
+appleBasket
+>>>>>>> 2141f9aa71f00e356ce28c693d6cb985eafd8e0b
   .filter((apple) => apple.color === "green" && apple.sweet >= 9)
   .map((apple) => {
     const covertedColor = apple.color === "green" ? "초록" : "빨강";

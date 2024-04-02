@@ -199,5 +199,8 @@ const countByColor = appleBasket.reduce((count, apple) => {
 
 console.log(countByColor);
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 2141f9aa71f00e356ce28c693d6cb985eafd8e0b
 // 못하겠다 ㅈㅈ

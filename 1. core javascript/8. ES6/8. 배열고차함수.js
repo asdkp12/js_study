@@ -85,11 +85,19 @@ console.log("===========================================");
 const mappedNumbers = numbers.map((n) => `<li class="list-item">${n}</li>`);
 console.log(mappedNumbers);
 
+<<<<<<< HEAD
 // 회원목록에서 회원의 나이를 xx세로 매핑!!
 const mappedUsers = userList.map((user) => `${user.age}세`);
 console.log(mappedUsers);
 
 // 회원목록에서 회원 이름과 회원의 나이와 회원의 주소를 추출할건데
+=======
+// 회원모록에서 회원의 나이를 xx세로 매핑!!
+const mappedUsers = userList.map((user) => `${user.age}세`);
+console.log(mappedUsers);
+
+// 회원모록에서 회원 이름과 회원의 나이와 회원의 주소를 추출할건데
+>>>>>>> 2141f9aa71f00e356ce28c693d6cb985eafd8e0b
 // 이름의 키값을 nickName, 나이는 old, 주소는 addr 로 하고싶다!!
 const MappedUserList = userList.map((p) => {
   return { nickName: p.userName, old: p.age, addr: p.address };
