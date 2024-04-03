@@ -107,7 +107,7 @@ ul.appendChild(newLi);
 -------------------------------------------------------------
 
 -노드 생성 및 활용 2 (innerHTML없이!)
-const newLi = document.createElement('li) 
+const newLi = document.createElement('li') 
 = <li><li>
 
 const newText = document.createTextNode('pink')
