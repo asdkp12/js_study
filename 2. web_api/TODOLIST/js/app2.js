@@ -65,10 +65,12 @@ $template.addEventListener("click", (e) => {
   $list.removeChild($li);
 });
 // 체크박스할건데
-// 템플릿에 이벤트를 걸어 
+// 템플릿에 이벤트를 걸어
 // if 어쩌구 저쩌구 matches로 내가 찍은 e.target이랑 !== 이면 다 리턴.
 // classlist.add 로 내가 이벤트를 발생시키면 e.target으로 찾은 라벨에게
 // 없으면 checked를 추가하고 만약 checked가 있으면 삭제
+// check box event를 발생 시키면 체크가 되죠? ㄱ그러면 맨위 todos 배열의
+// done 값 true false 왓다갓다
 
 // 2. li태그 안에 문자 넣어줌
 // 3. li태그 ul에 넣어줌
