@@ -1,4 +1,0 @@
-바꿀노드.textContent = "";
-문자 바꿔줌
-
-.appendChild

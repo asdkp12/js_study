@@ -36,7 +36,7 @@ b = 위치
 
 그래서 디스트럭션이 먼데 10덕아
 // ...로 풀고 []로 다시 배열로 만들고 구조분해 할당하는거임
-ex)
+ex.
 const $fruits = document.getElementById("fruits");
       const [$apple, $banana, $grape] = [...$fruits.children];
 요론식

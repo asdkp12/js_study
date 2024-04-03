@@ -1,5 +1,5 @@
 
-코딩악마 1강.
+코딩앙마 1강.
 =======================================================================
 
 document.documentElement
@@ -40,7 +40,7 @@ for of
 
 -----------------------------------------
 
-코딩악마 2강.
+코딩앙마 2강.
 =======================================================================
 
 .QuerySelectorAll('.class')
@@ -84,7 +84,7 @@ nextSibling 보단
 nextElementSibling
 요론식
 
-코딩악마 3강.
+코딩앙마 3강.
 =======================================================================
 
 -노드 추가
@@ -150,8 +150,108 @@ appendChild 와 다르게 ul에 넣어주는게 아닌 li앞에 넣어줌.
 - 노드 삭제
 . removeChild();    = 삭-제 시킴
 
-코딩악마 4강.
+코딩앙마 4강.
 =======================================================================
 
 CSS style, class 제어
-.classList  =add remove 등의 기능을 준다 골라쓰면 됨
+.style      = backgroundColor , width 등 cssDeclaration 객체 반환, 
+            스타일 쓸 수 있음
+
+.className  = class 에 접근해주는 프로퍼티
+            box.className = 'bg-red txt-pink' 이렇게 쓰면 됨
+
+.classList  = add remove 등의 메서드를 준다 골라쓰면 됨
+            box.classList.add('txt-white','bg-green') : class 추가
+            box.classList.remove('txt-white') : class 제거
+            box.classList.replace('a','b') : a class 를 b 로 변경
+            box.classList.toggle('bg-green') : bg-green 이라는 클래스가 
+            있으면 제거, 없으면 생성.
+            토글같은 경우는 이벤트와 함께 클릭시 클래스를 넣었다 뺐다 해줄 수 있음
+
+코딩앙마 5강.
+=======================================================================
+EVENT 란? 
+마우스 키보드를 사용하거나 인풋창 포커스, 문서의 로드 완료. => EVENT 발생
+이때 특정 함수를 할당해서 실행해 줄 수 있음. => clickHandler 이런식
+
+on다음에 event 타입을 적고  = "함수명"
+onclick="alert('click')"    = 클릭시 alert('click')
+
+------------------------함수 활용법---------------------------
+
+------------------------------------------------
+
+1. onclick
+
+function sayHello() {
+    alert("Hello")
+}
+
+onclick="sayHello()"
+
+------------------------------------------------
+
+2. onclick
+
+const el = document.getElementById('btn')
+el.onclick = sayHello;      <= ()가 없는 이유 : 있으면 함수의 반환값이 할당.
+
+------------------------------------------------
+
+3. addEventListener
+
+const el = document.getElementById('btn')
+el.addEventListener('click', sayHello)
+
+------------------------------------------------
+
+4. addEventListener (콜백방식으로 직접작성.)
+
+const el = document.getElementById('btn')
+el.addEventListener('click', () => {
+    alert("hi")
+});
+
+* DOMContentLoaded 의 경우 콜백방식으로 써야 적용이 됨 *
+click
+dblclick
+keyup
+등이 있다
+
+------------------------------------------------
+
+코딩앙마 6강. 
+=======================================================================
+
+버블링
+
+자식요소에서 발생된 이벤트 객체는 부모와 그 부모를 통해 전파됨
+( 하위 -> 상위 ) 전파
+
+ *버블링x*       *버블링o*
+focus           focusin
+blur            focusout
+mouseenter      mouseover  
+mouseleave      mouseout
+
+------------------------------------------------
+
+버블링 인위적으로 막기
+addEventListener("focusin",(event) => {
+    event.stopPropagation();
+    console.log();
+    });
+
+------------------------------------------------
+
+이벤트 위임 (버블활용)
+
+자신에게 발생한 이벤트를 다른 요소에서처리.
+
+document.getElementById('list').addEventListener("click",함수명);
+
+버블링 <- 부모에 이벤트 걸면 왜 
+
+이론은 부모태그가 같이 이벤트 터지는건데 
+왜 활용할때 부모태그에 이벤트를 거는지 궁금하다
+=> event.target 으로 부모한테 위임하는거임 ez
